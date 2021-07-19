@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}VC Results{% endblock %}
+{% block content %}
+
+<div style="margin: 30px; background-color: rgb(207, 237, 247);">
+<h3 style="width: 300px;">Servers</h3>
+<table>
+  {% for line in vmks %}
+  {% set a = line|length %}
+<tr><td><b>{{line[0]}}</b></td>
+  {% for i in range(1,a) %}
+  <td></td><td style="width: 50px;">{{line[i][0]}}</td><td>{{line[i][1]}}</td><td>{{line[i][2]}}</td>
+  {% endfor %}   
+</tr>
+  {% endfor%}
+</table>
+</div>
+
+<div style="margin: 30px; background-color: rgb(209, 211, 212);">
+<h3>SVMs</h3>
+<table>
+<tr><td style="width: 125px;">SVM</td><td style="width: 70px;">Device</td><td style="width: 50px;">MTU</td><td style="width: 70px;">Device</td><td>MTU</td></tr>
+{% for svm in svm_mtus %}
+<tr><td> {{svm[0]}}</td><td> {{svm[1]}}</td><td> {{svm[2]}}</td><td> {{svm[3]}}</td><td> {{svm[4]}}</td></tr>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}

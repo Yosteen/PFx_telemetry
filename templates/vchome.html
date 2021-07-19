@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}VC Common{% endblock %}
+{% block content %}
+<div style="margin: 30px;">
+    <h4>Complete the form and choose wich test you would like to run</h4>
+    <form method="POST" action="/vc/home">
+        <label style="width:200px;" for="ip">vCenter IP or FQDN </label>
+        <input type="text" id="ip" name="ip"><br>
+
+        <label style="width:200px;" for="uname">VC Username </label>
+        <input type="text" id="uname" name="uname"><br>
+        
+        <label style="width:200px;" for="pass">VC Password </label>
+        <input type="password" id="pass" name="pass"><br>
+
+        <label style="width:200px;" for="svmuname">SVMs Username </label>
+        <input type="text" id="svmuname" name="svmuname"><br>
+
+        <label style="width:200px;" for="svmpass">SVMs Password </label>
+        <input type="password" id="svmpass" name="svmpass"><br>
+
+        <input type="checkbox" id="box1" name="box1" value ="MTU">
+        <label for="box1"> MTU verification</label><br>
+        <input type="checkbox" id="box2" name="box2" value ="vmotion">
+        <label for="box1"> vMotion verification</label><br>
+        <input type="checkbox" id="box3" name="box3" value ="ds">
+        <label for="box1"> Datastore-Monitoring</label><br><br>
+        <input type="submit" value="Submit">
+        
+    </form>
+
+</div>
+{% endblock %}
+
+
+
+
