@@ -5,9 +5,9 @@ os.system('clear')
 
 vc = '192.168.41.5'
 vcUname = 'administrator@vsphere.local'
-vcPassword = 'Rtp@1234'
+vcPassword = ''
 svmUname = 'vxflex'
-svmPassword = 'VMwar3!!'
+svmPassword = ''
 
 
 si = connect.SmartConnectNoSSL(host=vc,user=vcUname,pwd=vcPassword)
@@ -52,7 +52,7 @@ vmkIpCmd = f'esxcli network ip interface ipv4 get {vmkIpPrefix}'
 vipIPsCmd = f'more /etc/vmware/esx.conf | grep IoctlMdmIPStr {vipPrefix}'
 hostsVmkIPsDic={}
 for host in hosts: 
-    outputRaw = os.popen (f'sshpass -p Rtp@1234 ssh -l root {host} {vmkIpCmd}')
+    outputRaw = os.popen (f'sshpass -p pasword1 ssh -l root {host} {vmkIpCmd}')
     outputRead = outputRaw.read()
     outputArr = outputRead.split(',')
     vmkIpDic={}
@@ -63,7 +63,7 @@ for host in hosts:
             vmkIpDic.update({DicKey:DicValue})
     #for k,v in vmkIpDic.items(): print (k,v)
     hostsVmkIPsDic.update({host:vmkIpDic})
-    sioVipOutputRaw = os.popen (f'sshpass -p Rtp@1234 ssh -l root {host} {vipIPsCmd}')
+    sioVipOutputRaw = os.popen (f'sshpass -p password1 ssh -l root {host} {vipIPsCmd}')
     sioVipOutput = sioVipOutputRaw.read()
     sioVipOutputArr = sioVipOutput.split("=")
     sioVips = (sioVipOutputArr[1])[0:-2]

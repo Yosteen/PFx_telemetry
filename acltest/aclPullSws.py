@@ -19,7 +19,7 @@ numOfPolls = int((test_period*60)/interval)
 
 #num_of_pulls=1
 user='admin'
-password='Rtp@1234'
+password=''
 
 sws =['10.234.112.60','10.234.112.61']
 

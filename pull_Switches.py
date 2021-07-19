@@ -16,7 +16,7 @@ pull_frequency = int(row_test['pull_frequency'])
 num_of_pulls = int((test_period*60)/pull_frequency)
 
 user='admin'
-password='Rtp@1234'
+password=''
 
 sws =['10.234.112.32','10.234.112.33','10.234.112.34','10.234.112.35']
 

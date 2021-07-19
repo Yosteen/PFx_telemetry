@@ -4,7 +4,7 @@ import requests,json,urllib3,os,xmltodict
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 #os.system('clear')
 user='admin'
-password='Rtp@1234'
+password=''
 
 headers = {'cache-control': "no-cache"}
 switches =['10.234.112.60']
